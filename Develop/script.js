@@ -15,17 +15,35 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
 
-  var passwordLength = window.alert("Choose a number between 8 and 128");
-  var char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789!@#$%^&*()";
+  var passwordLength = window.prompt("Choose a number between 8 and 128. This will be the length of your password.");
+  var char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789/.;[]?><{}+_=-)(*&^%$#@!";
   var passStart = "";
 
-  for (var i = 0, n = pass)
+  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var specialCharacters = ["/", ".",";", "[", "]", "?", ">", "<", "{", "}", "+", "_", "=", "-", ")", "(", "*", "&", "^", "%", "$", "#", "@", "!"];
+
+  var passwordChoices = [upperCase, lowercase, numbers, specialCharacters];
+
+  for (var i = 0, n = char.length; i < passwordLength; ++i) {
+    passStart += char.charAt(Math.floor(Math.random() * n));
+  }
+  
+  window.alert(passStart);
+  console.log(passStart);
+  return passStart;
+}
+
+
+
+
   // must return a string value that is the password
   // CONSOLE.LOG ALMOST EVERYTHING
   // prompt user to choose num between 8 and 128
       //var to save length
     // confirm user choice
-  window.confirm("Are you sure this is your choice?")
+  // confirm("are you sure you want to ___");
   // confirm user upper, lower, num, special characters (4 confirm prompts)
    // Validate that at least one category was chosen
       // 4 vars to save T/F to included characters
@@ -39,5 +57,5 @@ function generatePassword() {
   // Randomly choose x number of elements from each array
   // Join chosen elements into a string
   //return passwordString;
-  return "hello"
-}
+//   return "hello"
+// }
