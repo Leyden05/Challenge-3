@@ -16,6 +16,11 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 
   var passwordLength = window.prompt("Choose a number between 8 and 128. This will be the length of your password.");
+  var upperCaseChoice = window.prompt("Do you want uppercase characters in your password?");
+  var lowerCaseChoice = window.prompt("Do you want lowercase characters in your password?");
+  var numbersChoice = window.prompt("Do you want numbers in your password?");
+  var specialCharactersChoice = window.prompt("Do you want special characters in your password?");
+
   var char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789/.;[]?><{}+_=-)(*&^%$#@!";
   var passStart = "";
 
@@ -23,8 +28,6 @@ function generatePassword() {
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var specialCharacters = ["/", ".",";", "[", "]", "?", ">", "<", "{", "}", "+", "_", "=", "-", ")", "(", "*", "&", "^", "%", "$", "#", "@", "!"];
-
-  var passwordChoices = [upperCase, lowercase, numbers, specialCharacters];
 
   for (var i = 0, n = char.length; i < passwordLength; ++i) {
     passStart += char.charAt(Math.floor(Math.random() * n));
